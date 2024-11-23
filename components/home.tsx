@@ -40,6 +40,8 @@ const Home = () => {
   }, [])
 
   const handleExtract = async () => {
+    setOcrResult("");
+    setFinalRes("");
     if (!workerRef.current || !imageData) return
 
     setProgress(0)
