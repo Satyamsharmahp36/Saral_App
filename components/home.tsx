@@ -79,33 +79,6 @@ const Home = () => {
     }
   }
 
-  const formatText = (text: string) => {
-    const boldRegex = /\\(.+?)\\*/g
-    const bulletRegex = /^- (.+)$/gm
-
-    let formattedText = text.replace(
-      boldRegex,
-      (match, p1) => `<strong>${p1}</strong>`
-    )
-    const lines = formattedText.split("\n")
-    const formattedLines = lines.map((line, index) => {
-      if (bulletRegex.test(line)) {
-        return (
-          <li
-            key={index}
-            dangerouslySetInnerHTML={{
-              __html: line.replace(bulletRegex, (match, p1) => p1.trim()),
-            }}
-          />
-        )
-      } else {
-        return <p key={index} dangerouslySetInnerHTML={{ __html: line }} />
-      }
-    })
-
-    return formattedLines
-  }
-
   return (
     <Group align="initial" style={{ padding: "10px" }}>
       <Stack style={{ flex: "1" }}>
