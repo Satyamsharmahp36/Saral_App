@@ -79,3 +79,17 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+
+@keyframes aurora {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+
+.animate-aurora {
+  animation: aurora 60s linear infinite;
+}
